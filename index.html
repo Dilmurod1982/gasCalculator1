@@ -13,7 +13,7 @@
     />
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body class="flex justify-center items-center">
+  <body class="flex justify-center flex-col items-center">
     <div class="flex items-center flex-col w-[376px] bg-green-700 gap-2">
       <h1 class="text-2xl text-center text-green-100">
         Меъёр бўйича табиий газ сарфини ҳисоблаш
@@ -133,7 +133,130 @@
           кўпайтирилади.Мана шу хажм дейилади
         </p>
       </div>
-      <button class="btn btn-outline btn-accent">Ҳисоблаш</button>
+      <button id="btn" class="btn btn-outline btn-accent mb-6">Ҳисоблаш</button>
+    </div>
+
+    <div id="divreport" class="hidden">
+      <div class="flex items-center flex-col w-[376px] bg-gray-400 gap-2">
+        <h1 class="font-bold">ҲИСОБОТ</h1>
+        <p class="w-[240px] text-xs text-rose-600 text-center">
+          Диққат! Ушбу ҳисобот бир ойлик газ сарфини ҳисоблаб беради!
+        </p>
+        <div>
+          <p class="text-stone-800">Одам сони</p>
+          <p id="os" class="text-center">6</p>
+        </div>
+        <div>
+          <p class="text-center">Овқат пишириш учун газ сарфи</p>
+          <div class="flex justify-center">
+            <h1 id="ovqatkub">222</h1>
+            <h1>&nbsp;м3 ёки&nbsp;</h1>
+            <p id="ovqatsom">26548</p>
+            <p>&nbsp;сўм</p>
+          </div>
+        </div>
+        <div class="issuv">
+          <p class="text-center">Иссиқ сув учун газ сарфи</p>
+          <div class="flex justify-center">
+            <h1 id="isuvkub">222</h1>
+            <h1>&nbsp;м3 ёки&nbsp;</h1>
+            <p id="isuvsom">26548</p>
+            <p>&nbsp;сўм</p>
+          </div>
+        </div>
+        <div class="issuv">
+          <p class="text-center">Ҳайвонлар учун жами газ сарфи</p>
+          <div class="flex justify-center">
+            <h1 id="hayvonkub">222</h1>
+            <h1>&nbsp;м3 ёки&nbsp;</h1>
+            <p id="hayvonsom">26548</p>
+            <p>&nbsp;сўм</p>
+          </div>
+          <p class="text-center mb-2">Шундан:</p>
+          <div class="flex justify-center">
+            <p>1</p>
+            <p class="text-center">&nbsp;та йилқи учун</p>
+          </div>
+
+          <div class="flex justify-center mb-2">
+            <h1 id="yilkikub">222</h1>
+            <h1>&nbsp;м3 ёки&nbsp;</h1>
+            <p id="yilkisom">26548</p>
+            <p>&nbsp;сўм</p>
+          </div>
+          <div class="flex justify-center">
+            <p>1</p>
+            <p class="text-center">&nbsp; cигир учун</p>
+          </div>
+
+          <div class="flex justify-center mb-2">
+            <h1 id="sigirkub">222</h1>
+            <h1>&nbsp;м3 ёки&nbsp;</h1>
+            <p id="sigirsom">26548</p>
+            <p>&nbsp;сўм</p>
+          </div>
+
+          <div class="flex justify-center">
+            <p>0</p>
+            <p class="text-center">&nbsp; чўчқа учун</p>
+          </div>
+
+          <div class="flex justify-center mb-2">
+            <h1 id="chochkakub">222</h1>
+            <h1>&nbsp;м3 ёки&nbsp;</h1>
+            <p id="chochkasom">26548</p>
+            <p>&nbsp;сўм</p>
+          </div>
+
+          <div class="flex justify-center">
+            <p>1</p>
+            <p class="text-center">&nbsp; қўй ва эчки учун</p>
+          </div>
+
+          <div class="flex justify-center mb-5">
+            <h1 id="qoykub">222</h1>
+            <h1>&nbsp;м3 ёки&nbsp;</h1>
+            <p id="qoysom">26548</p>
+            <p>&nbsp;сўм</p>
+          </div>
+
+          <div class="flex justify-center">
+            <p>492</p>
+            <p class="text-center">&nbsp; м3 уй хажмини иситиш учун ЖАМИ:</p>
+          </div>
+
+          <div class="flex justify-center mb-5">
+            <h1 id="isitkub">222</h1>
+            <h1>&nbsp;м3 ёки&nbsp;</h1>
+            <p id="isitsom">26548</p>
+            <p>&nbsp;сўм</p>
+          </div>
+          <p class="text-center">Шундан, 1 коэффициент бўйича</p>
+          <div class="flex justify-center mb-5">
+            <h1 id="birisitkub">222</h1>
+            <h1>&nbsp;м3 ёки&nbsp;</h1>
+            <p id="birisitsom">26548</p>
+            <p>&nbsp;сўм</p>
+          </div>
+          <p class="text-center">Шундан, 1.2 коэффициент бўйича</p>
+          <div class="flex justify-center mb-5">
+            <h1 id="ikkiisitkub">222</h1>
+            <h1>&nbsp;м3 ёки&nbsp;</h1>
+            <p id="ikkiisitsom">26548</p>
+            <p>&nbsp;сўм</p>
+          </div>
+
+          <p class="text-center font-bold">ЖАМИ ҲИСОБЛАНДИ:</p>
+
+          <div class="flex justify-center mb-2">
+            <h1 class="font-bold" id="sigirkub">222</h1>
+            <h1 class="font-bold">&nbsp;м3 ёки&nbsp;</h1>
+            <p class="font-bold" id="sigirsom">26548</p>
+            <p class="font-bold">&nbsp;сўм</p>
+          </div>
+          <h1>Made by Dilmurod Karimov</h1>
+        </div>
+      </div>
     </div>
     <script src="./js/app.js"></script>
   </body>
