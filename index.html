@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Аҳолини газ ҳисоблагичсиз газ сарфини ҳисоблаш калькулятори</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./src/output.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.11.1/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="flex justify-center items-center">
+    <div class="flex items-center flex-col w-[376px] bg-green-700 gap-2">
+      <h1 class="text-2xl text-center text-green-100">
+        Меъёр бўйича табиий газ сарфини ҳисоблаш
+      </h1>
+      <h1 class="text-2xl text-center text-green-100">КАЛЬКУЛЯТОРИ</h1>
+      <h1 class="text-1xl text-center text-green-100 font-bold">
+        Кўрсаткичларни киритинг:
+      </h1>
+      <div class="flex items-center gap-4 flex-col">
+        <label for="people" class="text-1xl text-center text-red-400 font-bold"
+          >Одам сони</label
+        >
+        <input
+          id="people"
+          type="number"
+          class="rounded mt-[-15px] text-center"
+          value="0"
+        />
+      </div>
+
+      <div class="flex items-center gap-4 flex-col mb-3">
+        <div class="flex flex-col">
+          <label for="plita" class="text-1xl text-center text-red-400 font-bold"
+            >Газ плиталар сони</label
+          >
+          <input
+            id="plita"
+            type="number"
+            class="rounded text-center"
+            value="0"
+          />
+        </div>
+        <p class="w-[300px] text-lime-200 text-xs mt-[-10px] text-center">
+          Бу ерга барча турдаги овқат пишириш ускуналари киритилади. ПГ-4, ПГ-3
+          ва хоказо
+        </p>
+      </div>
+
+      <div class="flex items-center gap-4 flex-col mb-3">
+        <div class="flex flex-col">
+          <label for="titan" class="text-1xl text-center text-red-400 font-bold"
+            >Сув иситиш ускуналари сони</label
+          >
+          <input
+            id="titan"
+            type="number"
+            class="rounded text-center"
+            value="0"
+          />
+        </div>
+        <p class="w-[300px] text-lime-200 text-xs mt-[-10px] text-center">
+          Бу ерга барча турдаги сув иситиш ускуналари киритилади. Титан, газовая
+          колонка ва хоказо
+        </p>
+      </div>
+
+      <div class="flex items-center gap-5 flex-col mb-3">
+        <p class="text-1xl text-center text-green-100 font-bold">Хайвонлар</p>
+        <div class="w-[260px] flex mt-[-15px] gap-2 justify-between">
+          <label for="yilki" class="text-1xl text-center text-red-400 font-bold"
+            >Йилқи</label
+          >
+          <input
+            id="yilki"
+            type="number"
+            class="rounded text-center"
+            value="0"
+          />
+        </div>
+        <div class="w-[260px] flex mt-[-15px] gap-2 justify-between">
+          <label for="sigir" class="text-1xl text-center text-red-400 font-bold"
+            >Сигир</label
+          >
+          <input
+            id="sigir"
+            type="number"
+            class="rounded text-center"
+            value="0"
+          />
+        </div>
+        <div class="w-[260px] flex mt-[-15px] gap-2 justify-between">
+          <label
+            for="chochka"
+            class="text-1xl text-center text-red-400 font-bold"
+            >Чўчқа</label
+          >
+          <input
+            id="chochka"
+            type="number"
+            class="rounded text-center"
+            value="0"
+          />
+        </div>
+        <div class="flex mt-[-15px] gap-2">
+          <label for="qoy" class="text-1xl text-center text-red-400 font-bold"
+            >Қўй/эчки</label
+          >
+          <input id="qoy" type="number" class="rounded text-center" value="0" />
+        </div>
+      </div>
+
+      <div class="flex items-center gap-4 flex-col mb-3">
+        <div class="flex flex-col">
+          <label for="hajm" class="text-1xl text-center text-red-400 font-bold"
+            >Истиш ҳажми</label
+          >
+          <input
+            id="hajm"
+            type="number"
+            class="rounded text-center"
+            value="0"
+          />
+        </div>
+        <p class="w-[300px] text-lime-200 text-xs mt-[-10px] text-center">
+          Бу ерга хонадонда барча истиладиган хоналарни хажми киритилади. Мисол:
+          хонани узунлигини энига кўпайтириб хосил бўлган рақамни хонани бўйига
+          кўпайтирилади.Мана шу хажм дейилади
+        </p>
+      </div>
+      <button class="btn btn-outline btn-accent">Ҳисоблаш</button>
+    </div>
+    <script src="./js/app.js"></script>
+  </body>
+</html>
