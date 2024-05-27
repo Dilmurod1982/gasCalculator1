@@ -32,6 +32,11 @@ const birisitkubEl = document.getElementById("birisitkub");
 const birisitsomEl = document.getElementById("birisitsom");
 const ikkiisitkubEl = document.getElementById("ikkiisitkub");
 const ikkiisitsomEl = document.getElementById("ikkiisitsom");
+const uyHajmiKubEl = document.getElementById("uyhajmikub");
+const coefTextEl = document.getElementById("coef2text");
+const coefDivEl = document.getElementById("coef2div");
+const jamiKubEl = document.getElementById("jamikub");
+const jamiSomEl = document.getElementById("jamisom");
 
 const norma11 = 11;
 const norma15 = 15;
@@ -41,7 +46,8 @@ const normaYilki = 5.6;
 const normaSigir = 23.7;
 const normaChochka = 12.5;
 const normaQoy = 2.2;
-const normahajm = peopleEl.value * 43;
+let normahajm = peopleEl.value * 43;
+const normaUyHajm = 43;
 
 const priceOvqat = 1500;
 const priceIsitish = 1100;
@@ -125,21 +131,67 @@ function hayvon() {
 }
 
 function uyisitish() {
-  if (hajmEl.value > normahajm) {
-    isitishBirResult = normahajm * isitish * priceIsitish;
-    isitishikkiResult =
-      (hajmEl.value - normahajm) * isitish * (priceIsitish * 1.2);
-    isitishResult = isitishBirResult + isitishikkiResult;
-    return isitishBirResult, isitishikkiResult, isitishResult;
+  if (Number(hajmEl.value) > peopleEl.value * 43) {
+    birisitsomEl.textContent =
+      parseInt(peopleEl.value) *
+      parseInt(43) *
+      parseInt(isitish) *
+      parseInt(priceIsitish);
+    birisitkubEl.textContent =
+      Number(peopleEl.value) * Number(normaUyHajm) * Number(isitish);
+    console.log(peopleEl.value, isitish, normaUyHajm, birisitkubEl.textContent);
+
+    ikkiisitsomEl.textContent =
+      (Number(hajmEl.value) - parseInt(peopleEl.value) * 43) *
+      isitish *
+      (priceIsitish * 1.2);
+    ikkiisitkubEl.textContent = (hajmEl.value - peopleEl.value * 43) * isitish;
+    isitsomEl.textContent =
+      parseInt(birisitsomEl.textContent) + parseInt(ikkiisitsomEl.textContent);
+    isitkubEl.textContent =
+      parseInt(birisitkubEl.textContent) + parseInt(ikkiisitkubEl.textContent);
+    coefDivEl.classList.remove("hidden");
+    coefTextEl.classList.remove("hidden");
+    return (
+      birisitkubEl,
+      birisitsomEl,
+      ikkiisitkubEl,
+      ikkiisitsomEl,
+      isitkubEl,
+      isitsomEl,
+      normahajm
+    );
   } else {
-    isitishBirResult = hajmEl.value * isitish * priceIsitish;
-    isitishResult = isitishBirResult;
-    return isitishBirResult, isitishResult;
+    birisitsomEl.textContent = hajmEl.value * isitish * priceIsitish;
+    birisitkubEl.textContent = hajmEl.value * isitish;
+    isitkubEl.textContent = parseInt(birisitkubEl.textContent);
+    isitsomEl.textContent = parseInt(birisitsomEl.textContent);
+    coefDivEl.classList.add("hidden");
+    coefTextEl.classList.add("hidden");
+    return birisitkubEl, birisitsomEl, isitkubEl, isitsomEl;
   }
+}
+
+function jami() {
+  jamiSomEl.textContent =
+    Number(ovqatsomEl.textContent) +
+    Number(isitsomEl.textContent) +
+    Number(hayvonsomEl.textContent) +
+    Number(isitsomEl.textContent);
+  jamiKubEl.textContent =
+    Number(ovqatkubEl.textContent) +
+    Number(isitkubEl.textContent) +
+    Number(hayvonkubEl.textContent) +
+    Number(isitkubEl.textContent);
 }
 
 btnEl.addEventListener("click", () => {
   divReport.classList.remove("hidden");
-  console.log(ovqatPishir(), issiqSuv(), hayvon(), uyisitish());
+  console.log(ovqatPishir(), issiqSuv(), hayvon(), uyisitish(), jami());
   odamSoniEl.textContent = peopleEl.value;
+  uyHajmiKubEl.textContent = hajmEl.value;
+  console.log(typeof hajmEl.value);
+  console.log(typeof normahajm);
 });
+
+console.log(normahajm);
