@@ -65,91 +65,101 @@ let isitishikkiResult = 0;
 
 function ovqatPishir() {
   if (titanEl.value > 0) {
-    ovqatsomEl.textContent =
-      peopleEl.value * norma11 * priceOvqat * plitaEl.value;
-    ovqatkubEl.textContent = peopleEl.value * norma11 * plitaEl.value;
+    ovqatsomEl.textContent = Math.round(
+      +peopleEl.value * norma11 * priceOvqat * +plitaEl.value
+    );
+    ovqatkubEl.textContent = +peopleEl.value * norma11 * +plitaEl.value;
     return ovqatsomEl, ovqatkubEl;
   } else {
-    ovqatsomEl.textContent =
-      peopleEl.value * norma15 * priceOvqat * plitaEl.value;
-    ovqatkubEl.textContent = peopleEl.value * norma15 * plitaEl.value;
-
-    return ovqatsomEl, ovqatkubEl;
+    ovqatsomEl.textContent = Math.round(
+      +peopleEl.value * norma15 * priceOvqat * +plitaEl.value
+    );
+    ovqatkubEl.textContent = +peopleEl.value * norma15 * +plitaEl.value;
   }
+  return ovqatsomEl, ovqatkubEl;
 }
 
 function issiqSuv() {
   if (titanEl.value > 0) {
-    isuvsomEl.textContent =
-      peopleEl.value * norma16 * priceOvqat * titanEl.value;
-    isuvkubEl.textContent = peopleEl.value * norma16 * titanEl.value;
+    isuvsomEl.textContent = Math.round(
+      +peopleEl.value * norma16 * priceOvqat * +titanEl.value
+    );
+    isuvkubEl.textContent = +peopleEl.value * norma16 * +titanEl.value;
 
     return isuvsomEl, isuvkubEl;
   }
 }
 
 function hayvon() {
+  let qoykub;
   if (
     yilkiEl.value > 0 ||
     sigirEl.value > 0 ||
     chochkaEl.value > 0 ||
     qoyEl.value > 0
   ) {
-    yilkisomEl.textContent = yilkiEl.value * normaYilki * priceOvqat;
-    yilkikubEl.textContent = yilkiEl.value * normaYilki;
-    sigirsomEl.textContent = sigirEl.value * normaSigir * priceOvqat;
-    sigirkubEl.textContent = sigirEl.value * normaSigir;
-    chochkasomEl.textContent = chochkaEl.value * normaChochka * priceOvqat;
-    chochkakubEl.textContent = chochkaEl.value * normaChochka;
-    qoysomEl.textContent =
-      parseInt(qoyEl.value) * parseInt(normaQoy) * parseInt(priceOvqat);
-    qoykubEl.textContent = qoyEl.value * normaQoy;
+    yilkisomEl.textContent = Math.round(
+      +yilkiEl.value * normaYilki * priceOvqat
+    );
+    yilkikubEl.textContent = +yilkiEl.value * normaYilki;
+    sigirsomEl.textContent = Math.round(
+      +sigirEl.value * normaSigir * priceOvqat
+    );
+    sigirkubEl.textContent = +sigirEl.value * normaSigir;
+    chochkasomEl.textContent = Math.round(
+      +chochkaEl.value * normaChochka * priceOvqat
+    );
+    chochkakubEl.textContent = +chochkaEl.value * normaChochka;
+    qoysomEl.textContent = Math.round(+qoyEl.value * normaQoy * priceOvqat);
+    qoykubEl.textContent = +qoyEl.value * normaQoy;
     hayvonsomEl.textContent =
-      parseInt(yilkisomEl.textContent) +
-      parseInt(sigirsomEl.textContent) +
-      parseInt(chochkasomEl.textContent) +
-      parseInt(qoysomEl.textContent);
+      +yilkisomEl.textContent +
+      +sigirsomEl.textContent +
+      +chochkasomEl.textContent +
+      +qoysomEl.textContent;
 
-    hayvonkubEl.textContent =
-      parseInt(yilkikubEl.textContent) +
-      parseInt(sigirkubEl.textContent) +
-      parseInt(chochkakubEl.textContent) +
-      parseInt(qoykubEl.textContent);
-    return (
-      yilkisomEl,
-      yilkikubEl,
-      sigirsomEl,
-      sigirkubEl,
-      chochkasomEl,
-      chochkakubEl,
-      qoysomEl,
-      qoykubEl,
-      hayvonsomEl,
-      hayvonkubEl
+    hayvonkubEl.textContent = Math.round(
+      +yilkikubEl.textContent +
+        +sigirkubEl.textContent +
+        +chochkakubEl.textContent +
+        +qoykubEl.textContent
     );
   }
+
+  return (
+    yilkisomEl,
+    yilkikubEl,
+    sigirsomEl,
+    sigirkubEl,
+    chochkasomEl,
+    chochkakubEl,
+    qoysomEl,
+    qoykubEl,
+    hayvonsomEl,
+    hayvonkubEl
+  );
 }
 
 function uyisitish() {
-  if (Number(hajmEl.value) > peopleEl.value * 43) {
-    birisitsomEl.textContent =
-      parseInt(peopleEl.value) *
-      parseInt(43) *
-      parseInt(isitish) *
-      parseInt(priceIsitish);
-    birisitkubEl.textContent =
-      Number(peopleEl.value) * Number(normaUyHajm) * Number(isitish);
-    console.log(peopleEl.value, isitish, normaUyHajm, birisitkubEl.textContent);
+  if (+hajmEl.value > +peopleEl.value * 43) {
+    birisitsomEl.textContent = Math.round(
+      +peopleEl.value * 43 * isitish * priceIsitish
+    );
+    birisitkubEl.textContent = Math.round(
+      +peopleEl.value * normaUyHajm * isitish
+    );
 
-    ikkiisitsomEl.textContent =
-      (Number(hajmEl.value) - parseInt(peopleEl.value) * 43) *
-      isitish *
-      (priceIsitish * 1.2);
-    ikkiisitkubEl.textContent = (hajmEl.value - peopleEl.value * 43) * isitish;
-    isitsomEl.textContent =
-      parseInt(birisitsomEl.textContent) + parseInt(ikkiisitsomEl.textContent);
+    ikkiisitsomEl.textContent = Math.round(
+      (+hajmEl.value - peopleEl.value * 43) * isitish * priceIsitish * 1.2
+    );
+    ikkiisitkubEl.textContent = Math.round(
+      (+hajmEl.value - peopleEl.value * 43) * isitish
+    );
+    isitsomEl.textContent = Math.round(
+      +birisitsomEl.textContent + +ikkiisitsomEl.textContent
+    );
     isitkubEl.textContent =
-      parseInt(birisitkubEl.textContent) + parseInt(ikkiisitkubEl.textContent);
+      +birisitkubEl.textContent + +ikkiisitkubEl.textContent;
     coefDivEl.classList.remove("hidden");
     coefTextEl.classList.remove("hidden");
     return (
@@ -162,10 +172,12 @@ function uyisitish() {
       normahajm
     );
   } else {
-    birisitsomEl.textContent = hajmEl.value * isitish * priceIsitish;
-    birisitkubEl.textContent = hajmEl.value * isitish;
-    isitkubEl.textContent = parseInt(birisitkubEl.textContent);
-    isitsomEl.textContent = parseInt(birisitsomEl.textContent);
+    birisitsomEl.textContent = Math.round(
+      +hajmEl.value * isitish * priceIsitish
+    );
+    birisitkubEl.textContent = Math.round(+hajmEl.value * isitish);
+    isitkubEl.textContent = +birisitkubEl.textContent;
+    isitsomEl.textContent = +birisitsomEl.textContent;
     coefDivEl.classList.add("hidden");
     coefTextEl.classList.add("hidden");
     return birisitkubEl, birisitsomEl, isitkubEl, isitsomEl;
@@ -173,25 +185,22 @@ function uyisitish() {
 }
 
 function jami() {
-  jamiSomEl.textContent =
-    Number(ovqatsomEl.textContent) +
-    Number(isitsomEl.textContent) +
-    Number(hayvonsomEl.textContent) +
-    Number(isitsomEl.textContent);
+  jamiSomEl.textContent = Math.round(
+    +ovqatsomEl.textContent +
+      +isuvsomEl.textContent +
+      +hayvonsomEl.textContent +
+      +isitsomEl.textContent
+  );
   jamiKubEl.textContent =
-    Number(ovqatkubEl.textContent) +
-    Number(isitkubEl.textContent) +
-    Number(hayvonkubEl.textContent) +
-    Number(isitkubEl.textContent);
+    +ovqatkubEl.textContent +
+    +isuvkubEl.textContent +
+    +hayvonkubEl.textContent +
+    +isitkubEl.textContent;
 }
 
 btnEl.addEventListener("click", () => {
   divReport.classList.remove("hidden");
-  console.log(ovqatPishir(), issiqSuv(), hayvon(), uyisitish(), jami());
+  ovqatPishir(), issiqSuv(), hayvon(), uyisitish(), jami();
   odamSoniEl.textContent = peopleEl.value;
   uyHajmiKubEl.textContent = hajmEl.value;
-  console.log(typeof hajmEl.value);
-  console.log(typeof normahajm);
 });
-
-console.log(normahajm);
